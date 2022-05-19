@@ -1,0 +1,31 @@
+Passos para usar o Debug do VSCode:
+
+1. Ir no símbolo de debug na lateral esqueda do VSCode e clicar em 
+create a launch.json file e em seguida na opção Node.
+
+2. Colocar essas configurations no arquivo launch.json e deixar a version:
+"configurations": [
+    {
+        "type": "node",
+        "request": "attach", 
+        "name": "Launch Program",
+        "skipFiles": [
+            "<node_internals>/**"
+        ],    
+    }
+]
+
+3. Colocar a opção --inspect no script do package.json. Isso vai fazer que o nosso Debug 
+consiga se comunicar com nossa aplicação. 
+
+4. Rodar sua aplicação, ir no símbolo de Debug novamente e clicar na seta verde para 
+começar o Debug.
+
+5. Coloque um breack point onde você deseja analisar o código e faça a requisição.
+
+6. Podemos melhorar ainda mais nosso Debug indo na aba WATCH na lateral esquerda,
+clicar no + e colocar o nome da variável que queremos monitorar(por exemplo, name 
+ou request.body). 
+
+7. Também podemos visualizar todos os breack points na parte lateral esquerda e ativar
+ou desativar os breack points que quiseremos ou não.

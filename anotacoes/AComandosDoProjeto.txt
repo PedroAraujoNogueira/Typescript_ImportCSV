@@ -24,9 +24,11 @@ flags:
 alteração no código.
 6.3. --transpile-only -> Dá agilidade na subida do servidor em ambiente de desenvolvimento, pois 
 não coloca alguns manipuladores de inspeção.
-6.4. Há também um alias curto, tsnd, para execução ts-node-dev, então ficaria:
+6.4. --inspect -> Isso vai fazer que o nosso Debug consiga se comunicar com nossa 
+aplicação, caso queiramos debuggar a aplicação.
+6.5. Há também um alias curto, tsnd, para execução ts-node-dev, então ficaria:
 "dev": "tsnd --transpile-only --ignore-watch node_modules --respawn src/server.ts"
-6.5. Para mais informações podemos olhar o GitHub da biblioteca:
+6.6. Para mais informações podemos olhar o GitHub da biblioteca:
 https://github.com/wclr/ts-node-dev
 
 7. yarn dev. Para rodar o projeto.
