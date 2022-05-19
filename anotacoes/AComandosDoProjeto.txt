@@ -1,0 +1,38 @@
+1. yarn init -y
+
+2. yarn add express && yarn add @types/express -D
+
+3. yarn add typescript -D. Ao adicionarmos o typscript 
+no nosso projeto adicionamos também automaticamente o tsc.
+
+4. yarn tsc --init. Inicializa um projeto TypeScript e cria um arquivo tsconfig.json. 
+Por padrão o Node não consegue entender o "import" e outras coisas usadas pelo typescript 
+então precisamos converter o código para Javascript com o tsc(typescript conversor).
+
+5. yarn add ts-node-dev -D. Essa biblioteca vai nos auxiliar para rodarmos o serviço,
+parecido como funciona o nodemon. Logo usando essa biblioteca não teremos que ficar 
+usando o comando "yarn tsc" para cria arquivos JS a partir dos arquivos typescript
+para só então rodarmos o comando node "caminhoDaPastaJS"(node dist/server.js), pois 
+essa biblioteca já se encarrega de fazer isso automaticamente toda vez que fazemos 
+alguma alteração no código.
+
+6. Adicionar ao script do package.json:
+"scripts": { "dev": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn src/server.ts" }
+flags: 
+6.1. --ignore-watch node_modules -> Faz com que as mudanças na pasta node_modules sejam ignorada.
+6.2. --respawn -> Faz com que seja feito o reload da nossa aplicação sempre que tiver alguma 
+alteração no código.
+6.3. --transpile-only -> Dá agilidade na subida do servidor em ambiente de desenvolvimento, pois 
+não coloca alguns manipuladores de inspeção.
+6.4. Há também um alias curto, tsnd, para execução ts-node-dev, então ficaria:
+"dev": "tsnd --transpile-only --ignore-watch node_modules --respawn src/server.ts"
+6.5. Para mais informações podemos olhar o GitHub da biblioteca:
+https://github.com/wclr/ts-node-dev
+
+7. yarn dev. Para rodar o projeto.
+
+8. Dentro do tsconfig.json desabilitar(comentar) o "strict": true. O strict é uma opção do 
+Javascript que vai checar os erros dentro da nossa aplicação, porém como estamos usando o 
+Typescript e ele funciona muito bem para checar esses erros, então vamos deixar essa 
+responsabilidade com o TypeScript.  
+

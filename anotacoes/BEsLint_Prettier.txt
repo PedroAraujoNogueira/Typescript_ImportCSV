@@ -1,0 +1,14 @@
+Para entendermos o que é o EsLint e o Prettier podemos ler esse artigo:
+https://www.notion.so/ESLint-e-Prettier-Trilha-Node-js-d3f3ef576e7f45dfbbde5c25fa662779#340924d1619d48ec8e8220569f298616  
+
+OBS1: Para adicionarmos a configuração abaixo no VSCode podemos usar CTRL + SHIFT + P 
+e escrever Open Settings(JSON). 
+"editor.codeActionsOnSave": {
+  "source.fixAll.eslint": true
+}
+
+OBS2: Após seguir o tutorial acima crie um arquivo chamado prettier.config.js 
+e dentro dele coloque a seguinte configuração:
+module.exports = {
+    singleQuote: false,
+}
