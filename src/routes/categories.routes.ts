@@ -1,30 +1,29 @@
-import { Router } from "express";
+import { request, Router } from "express";
 
-import { Category } from "../model/Category";
+import { CategoriesRepository } from "../repositories/CategoriesRepository";
 
 const categoriesRoutes = Router();
 
-const categories: Category[] = [];
+const categoriesRepository = new CategoriesRepository();
 
 categoriesRoutes.post("/", (request, response) => {
   const { name, description } = request.body;
 
-  const category = new Category();
+  const categoryExists = categoriesRepository.findByName(name);
 
-  /* Object.assign é uma função do próprio javascript, onde podemos passar um
-     objeto para essa função e os atributos que queremos atribuir para esse 
-     objeto, ou seja, é como se estivessemos atribuindo item a item(name, description 
-     e created_at) para dentro do nosso category .
-  */
-  Object.assign(category, {
-    name,
-    description,
-    created_at: new Date(),
-  });
+  if (categoryExists) {
+    return response.status(400).json({ message: "Category already exists!" });
+  }
 
-  categories.push(category);
+  categoriesRepository.create({ name, description });
 
-  return response.status(201).json({ category });
+  return response.status(201).send();
+});
+
+categoriesRoutes.get("/", (request, response) => {
+  const allRepositories = categoriesRepository.list();
+
+  return response.json(allRepositories);
 });
 
 export { categoriesRoutes };
