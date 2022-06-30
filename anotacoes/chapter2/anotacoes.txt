@@ -1,0 +1,9 @@
+O que são repositórios: são uma classe(ou camada) que vai ser responsável por fazer 
+toda a manipulação de dados no banco da nossa aplicação.
+
+SOLID
+S -> SRP: Single Responsability Principle(Principio da Responsabilidade Única)
+O -> OCP: Open-Closed Principle(Principio Aberto/Fechado)
+L -> LSP: Liskov Substitution Principle(Principio de Substituição de Liskov)
+I -> ISP: Interface Segregation Principle(Principio da Segregação de Interface)
+D -> DIP: Dependency Inversion Principle(Principio da Inversão de Dependendia) 
