@@ -23,7 +23,7 @@ categoriesRoutes.get("/", (request, response) => {
   console.log("chegou no get");
   const allRepositories = categoriesRepository.list();
 
-  return response.send("123456");
+  return response.json(allRepositories);
 });
 
 export { categoriesRoutes };
