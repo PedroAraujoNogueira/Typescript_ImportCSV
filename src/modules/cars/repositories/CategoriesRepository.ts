@@ -4,10 +4,6 @@ import {
   ICreateCategoryDTO,
 } from "./ICategoriesRepository";
 
-/* A Interface pode ser vista como um objeto que vai ser responsável por 
-   fazer a transferencia de dados entre uma camada e outra da nossa aplicação.
-*/
-
 class CategoriesRepository implements ICategoriesRepository {
   private categories: Category[] = [];
 
