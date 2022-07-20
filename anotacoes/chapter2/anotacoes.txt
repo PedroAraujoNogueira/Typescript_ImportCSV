@@ -1,9 +1,21 @@
-O que são repositórios: são uma classe(ou camada) que vai ser responsável por fazer 
+1. O que são repositories: são uma classe(ou camada) que vai ser responsável por fazer 
 toda a manipulação de dados no banco da nossa aplicação.
 
-SOLID
+2. SOLID
 S -> SRP: Single Responsability Principle(Principio da Responsabilidade Única)
 O -> OCP: Open-Closed Principle(Principio Aberto/Fechado)
 L -> LSP: Liskov Substitution Principle(Principio de Substituição de Liskov)
 I -> ISP: Interface Segregation Principle(Principio da Segregação de Interface)
 D -> DIP: Dependency Inversion Principle(Principio da Inversão de Dependendia) 
+
+3. Controllers são classes que recebem a requisição e retornam a resposta para quem está
+chamando elas.
+
+4. Nos useCases estarão nossas regras de negócios.
+
+5. Por que não foi criado uma interface para o useCases? Por que nos useCases são tratados 
+as regras de negócio, já os repositories são as classes que vão ser responsáveis pela 
+manipulação dos dados, ou seja, estão mais sujeitas à mudanças ao longo do tempo, logo é
+interessante abstrair os repositories por meio de uma interface, pois caso queiramos usar 
+outra "classe filha" dessa interface não teremos que alterar nada na nossa classe de 
+useCases, ou seja, as regras de negócio não sofrem modificação.  
