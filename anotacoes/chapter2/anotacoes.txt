@@ -9,7 +9,8 @@ I -> ISP: Interface Segregation Principle(Principio da Segregação de Interface
 D -> DIP: Dependency Inversion Principle(Principio da Inversão de Dependendia) 
 
 3. Controllers são classes que recebem a requisição e retornam a resposta para quem está
-chamando elas.
+chamando elas. São importantes também para que os Casos de Uso, desacoplados dos Controllers, 
+possam ser testados sem ativar um servidor web.
 
 4. Nos useCases estarão nossas regras de negócios.
 
@@ -32,3 +33,20 @@ https://www.tutorialsteacher.com/typescript/typescript-static
 8. Alterar o escopo de um construtor para private remove nossa capacidade de usar
 a palavra-chave new fora da classe. Ou seja, a palavra chave new fica inacessível 
 fora daquela classe, incluindo subclasses, e ficando acessível somente dentro da classe. 
+
+9. Um padrao de projeto muito comum em JS é a funcao factory.
+Funcao factory é uma funcao que retorna um objeto.
+https://github.com/PedroAraujoNogueira/JavaScript_Conceitos/blob/master/C_Funcao/O1_funcaoFactory.js
+
+10. Modificador de acesso Protected
+Pode ser acessado pela mesma classe e classes filhas, não pode ser acessado por outras classes.
+Ou seja, o protected foi feito para liberar o acesso ao atributo(deixar public) para os filhos, 
+e deixar privado para todas as outras classes.
+https://www.treinaweb.com.br/blog/modificadores-de-acesso-no-typescript
+
+11. Modificador de acesso Readonly
+Pode ser acessado fora da classe, mas não é possível alterar o seu valor.
+https://www.treinaweb.com.br/blog/modificadores-de-acesso-no-typescript
+
+12. Métodos Get e Set
+https://www.treinaweb.com.br/blog/modificadores-de-acesso-no-typescript
