@@ -19,3 +19,16 @@ manipulação dos dados, ou seja, estão mais sujeitas à mudanças ao longo do 
 interessante abstrair os repositories por meio de uma interface, pois caso queiramos usar 
 outra "classe filha" dessa interface não teremos que alterar nada na nossa classe de 
 useCases, ou seja, as regras de negócio não sofrem modificação.  
+
+6. A versão 3.8 adicionou os campos privados, que é uma maneira de declarar
+que um campo de uma classe é inacessível fora daquela classe, incluindo subclasses.
+
+7. O ES6 inclui membros estáticos e o TypeScript também. Os membros estáticos de uma
+classe são acessados ​​usando o nome da classe e a notação de ponto, sem criar um
+objeto, por exemplo, <ClassName>.<StaticMember>. Ou seja, são membros pertencentes a 
+classe e não a cada objeto.
+https://www.tutorialsteacher.com/typescript/typescript-static
+
+8. Alterar o escopo de um construtor para private remove nossa capacidade de usar
+a palavra-chave new fora da classe. Ou seja, a palavra chave new fica inacessível 
+fora daquela classe, incluindo subclasses, e ficando acessível somente dentro da classe. 

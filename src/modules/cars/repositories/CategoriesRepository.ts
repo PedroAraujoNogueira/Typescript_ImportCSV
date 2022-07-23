@@ -5,10 +5,26 @@ import {
 } from "./ICategoriesRepository";
 
 class CategoriesRepository implements ICategoriesRepository {
+  // A versão 3.8 adicionou os campos privados, que é uma maneira de declarar
+  // que um campo de uma classe é inacessível fora daquela classe, incluindo subclasses.
   private categories: Category[] = [];
 
-  constructor() {
+  // O ES6 inclui membros estáticos e o TypeScript também. Os membros estáticos de uma
+  // classe são acessados ​​usando o nome da classe e a notação de ponto, sem criar um
+  // objeto, por exemplo, <ClassName>.<StaticMember>.
+  private static INSTANCE: CategoriesRepository;
+
+  // Alterar o escopo de um construtor para private remove nossa capacidade de usar
+  // a palavra-chave new fora da classe.
+  private constructor() {
     this.categories = [];
+  }
+
+  public static getInstance(): CategoriesRepository {
+    if (!CategoriesRepository.INSTANCE) {
+      CategoriesRepository.INSTANCE = new CategoriesRepository();
+    }
+    return CategoriesRepository.INSTANCE;
   }
 
   create({ name, description }: ICreateCategoryDTO): void {
