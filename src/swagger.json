@@ -1,0 +1,11 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Swagger Documentation",
+        "description": "Usando o Swagger",
+        "version": "1.0.0",
+        "contact": {
+            "email": "pedroaraujonogueirati@gmail.com"
+        } 
+    }
+}

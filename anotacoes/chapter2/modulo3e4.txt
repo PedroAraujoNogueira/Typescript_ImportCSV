@@ -50,3 +50,76 @@ https://www.treinaweb.com.br/blog/modificadores-de-acesso-no-typescript
 
 12. Métodos Get e Set
 https://www.treinaweb.com.br/blog/modificadores-de-acesso-no-typescript
+
+13. Nomenclaturas:
+Entities(ou model): São classes que representam os dados na sua aplicação. A 
+forma como eles serão representados.
+EX: 
+class User {
+  id?: string;
+  email: string;
+  password: string;
+  
+  constructor() {
+    if (!this.id) { this.id = uuidV4(); } 
+  }
+}
+
+Repositories: Classes que manipulam os dados orintudos das Entities. Aqui
+é feito todos os cadastros, listagem, edição, deleção desses dados. Vale 
+ressaltar que aqui não há nenhuma verificação, como se já existe algum usuário antes de
+inserir outro com os mesmos dados e etc. Aqui é a forma pura de manipulação dos dados.
+EX: 
+class UsersRepository implements IUsersRepository {
+  private users: User[] = [];
+  
+  create({ email, password }: ICreateUserDTO): User {
+    const user = new User();
+    Object.assign(User, { email, password });
+    this.users.push(user);
+    
+    return user;
+  }
+}
+
+useCases/Services: São classes que possuem uma única responsabilidade específica e que 
+acessam os repositories para realizar sua tarefa. Aqui sim entram as regras de negócio.
+Por exemplo, para criar um usuário na aplicação, um CreateUserUseCase que terá a única 
+função de criar um usuário, contudo, ele validará se já existe um usuário com o e-mail 
+enviado, por exemplo, para aí sim chamar o repositório de usuários para realizar a criação 
+deste usuário.
+
+EX:
+class CreateUserUseCase {
+ 
+  constructor(
+    private usersRepository: IUsersRepository 
+  ) {}
+  
+  execute({ email, password }: IRequest): User {
+    const userExists = usersRepository.findByEmail(email);
+    
+    if (!userExists) throw new Error ('User already exists');
+    
+    const user = usersRepository.create({ email, password });
+    
+    return user;
+  }
+}
+
+Controllers: São as classes que tem a única responsabilidade de receber o que vem 
+da rota (o request), enviar esses dados para o useCase ou Service e retornar (o response)
+a resposta do useCase (ou Service) para a rota.
+
+EX:
+class CreateUserController {
+  handle(response: Response, request: Request): Request {
+    const { email, password } = request.body;
+    
+    const user = createUserUseCas.execute({ email, password });
+    
+    return response.status(201).json(user);
+  }
+}
+
+

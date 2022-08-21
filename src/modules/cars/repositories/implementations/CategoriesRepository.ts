@@ -7,7 +7,7 @@ import {
 class CategoriesRepository implements ICategoriesRepository {
   // A versão 3.8 adicionou os campos privados, que é uma maneira de declarar
   // que um campo de uma classe é inacessível fora daquela classe, incluindo subclasses.
-  private categories: Category[] = [];
+  private categories: Category[];
 
   // O ES6 inclui membros estáticos e o TypeScript também. Os membros estáticos de uma
   // classe são acessados ​​usando o nome da classe e a notação de ponto, sem criar um
@@ -33,7 +33,7 @@ class CategoriesRepository implements ICategoriesRepository {
     /* Object.assign é uma função do próprio javascript, onde podemos passar um
        objeto para essa função e os atributos que queremos atribuir para esse 
        objeto, ou seja, é como se estivessemos atribuindo item a item(name, description 
-       e created_at) para dentro do nosso category .
+       e created_at) para dentro do nosso category.
     */
     Object.assign(category, {
       name,

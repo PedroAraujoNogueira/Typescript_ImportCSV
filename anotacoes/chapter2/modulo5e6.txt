@@ -1,0 +1,18 @@
+1. Exemplo dos atributos que o Multer trás de um arquivo:
+{
+    fieldname: 'file',
+    originalname: '1615818549022-attachment.csv',
+    encoding: '7bit',
+    mimetype: 'text/csv',
+    destination: './tmp',
+    filename: '7c2144e9129be03575ef1924ad678bd9',
+    path: 'tmp/7c2144e9129be03575ef1924ad678bd9',
+    size: 78
+}
+
+2. Vamos adicionar essa configuração no arquivo tsconfig.json para que seja possível
+nossa aplicação trabalhar com arquivos.json.
+"resolveJsonModule": true
+
+3. Para configurar o arquivo swagger.json podemos seguir essa documentação:
+https://swagger.io/specification/
