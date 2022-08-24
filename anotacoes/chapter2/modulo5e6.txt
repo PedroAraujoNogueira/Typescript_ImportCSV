@@ -10,9 +10,15 @@
     size: 78
 }
 
+DOCUMENTAÇÃO COM SWAGGER.
+
 2. Vamos adicionar essa configuração no arquivo tsconfig.json para que seja possível
 nossa aplicação trabalhar com arquivos.json.
 "resolveJsonModule": true
 
-3. Para configurar o arquivo swagger.json podemos seguir essa documentação:
+3. Para entender o swagger(atual OpenAPI) podemos seguir essas documentações:
 https://swagger.io/specification/
+https://swagger.io/docs/specification/about/
+
+4. A biblioteca que vamos utilizar para implementar o Swagger é a:
+https://www.npmjs.com/package/swagger-ui-express
