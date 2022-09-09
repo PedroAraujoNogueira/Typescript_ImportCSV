@@ -1,0 +1,22 @@
+ORM (OBJECT RELATIONAL MAPPING)
+
+-> O ORM mapeia nosso model para que o banco de dados entenda que aquele model 
+é uma tabela no banco de dados. 
+(MODEL <-> ORM <-> BANCO DE DADOS)
+
+INSTALANDO TYPEORM
+
+-> yarn add typeorm reflect-metadata
+-> yarn add pg
+-> No arquivo tsconfig.json temos que descomentar as seguintes linhas:
+"experimentalDecorators": true     
+"emitDecoratorMetadata": true 
+
+MIGRATIONS
+
+-> Migrations são uma espécie de versionamento de tudo que fazemos no nosso banco de 
+dados.
+-> Comando para criar uma migration:
+yarn typeorm migration:create ./src/database/migrations/CreateCategory 
+-> Comando para 
+

@@ -10,9 +10,12 @@
     size: 78
 }
 
+2. Para testarmos um arquivo precisamos passar o header da seguinte maneira:
+Content-Type: multipart/form-data
+
 DOCUMENTAÇÃO COM SWAGGER.
 
-2. Vamos adicionar essa configuração no arquivo tsconfig.json para que seja possível
+1. Vamos adicionar essa configuração no arquivo tsconfig.json para que seja possível
 nossa aplicação trabalhar com arquivos.json.
 "resolveJsonModule": true
 
