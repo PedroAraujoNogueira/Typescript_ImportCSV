@@ -1,0 +1,2 @@
+1. Quando estamos trabalhando com middlewares de erros o error vem como 
+primeiro parâmetro do middleware.

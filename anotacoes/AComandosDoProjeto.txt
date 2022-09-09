@@ -38,3 +38,6 @@ Javascript que vai checar os erros dentro da nossa aplicação, porém como esta
 Typescript e ele funciona muito bem para checar esses erros, então vamos deixar essa 
 responsabilidade com o TypeScript.  
 
+9. Para lidar com os THROW da aplicação podemos usar a seguinte biblioteca. 
+yarn add express-async-errors
+
